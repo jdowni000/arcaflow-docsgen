@@ -1,3 +1,4 @@
+// package docsgen
 package docsgen
 
 import (
