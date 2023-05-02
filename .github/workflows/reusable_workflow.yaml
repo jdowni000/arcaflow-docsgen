@@ -1,4 +1,4 @@
-name: Arcaflow Docsgen Reusable Workflow
+name: Arcaflow Docsgen Python Plugin
 on:
   workflow_call:
     inputs:

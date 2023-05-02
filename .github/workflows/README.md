@@ -1,4 +1,4 @@
-# Aracflow Docsgen as a Reusable Workflow
+# Aracflow Docsgen as a Reusable Workflow for Python Plugins
 
 This will automatically run arcaflow-docsgen and compare the new output to the current auto-generated content, or placeholder content on the first run, of the README.md arcaflow-docsgen section.  
 If required changes are detected, an automatic commit and push of these changes will be made to the working branch's README.md file.
