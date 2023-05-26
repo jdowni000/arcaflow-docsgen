@@ -10,6 +10,9 @@ jobs:
   docsgen-python:
     name: Comparing ${{ github.ref_name }} docs from ${{ github.event_name }}
     runs-on: ubuntu-latest
+    permissions:
+          actions: read|write|none
+          contents: read|write|none
     steps:
       - name: Checkout this project
         uses: actions/checkout@v3
