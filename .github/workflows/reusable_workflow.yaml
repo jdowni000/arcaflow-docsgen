@@ -5,13 +5,13 @@ on:
       plugin_path:
         required: true
         type: string
+permissions:
+      contents: write
 
 jobs:
   docsgen-python:
     name: Comparing ${{ github.ref_name }} docs from ${{ github.event_name }}
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout this project
         uses: actions/checkout@v3
