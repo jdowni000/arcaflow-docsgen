@@ -11,8 +11,7 @@ jobs:
     name: Comparing ${{ github.ref_name }} docs from ${{ github.event_name }}
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      pull-requests: write
+      contents: write
     steps:
       - name: Checkout this project
         uses: actions/checkout@v3
