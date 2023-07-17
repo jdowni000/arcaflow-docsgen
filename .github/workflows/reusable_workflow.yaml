@@ -24,7 +24,7 @@ jobs:
           python -m venv .venv
           source .venv/bin/activate
           pip install poetry
-          pip install pyyaml
+          python -m poetry run pip install pyyaml==6.0.0 --force-reinstall
           python -m poetry install
           python ./${{ inputs.plugin_path }} --schema > schema.yaml
       
