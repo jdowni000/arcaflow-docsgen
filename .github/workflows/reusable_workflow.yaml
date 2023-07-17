@@ -23,8 +23,9 @@ jobs:
         run: |
           python -m venv .venv
           source .venv/bin/activate
-          pip install poetry==1.4.2
-          python -m poetry install --without dev --no-root
+          pip install poetry
+          pip install pyyaml
+          python -m poetry install
           python ./${{ inputs.plugin_path }} --schema > schema.yaml
       
       - name: Create temp readme
