@@ -23,7 +23,7 @@ jobs:
         run: |
           python -m venv .venv
           source .venv/bin/activate
-          pip install poetry
+          pip install poetry=1.4.2
           python -m poetry install 
           python ./${{ inputs.plugin_path }} --schema > schema.yaml
       
