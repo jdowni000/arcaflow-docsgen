@@ -52,7 +52,7 @@ jobs:
 
       - name: Run arcaflow-docsgen
         run: |
-          arcaflow-docsgen -markdown README_TMP.md -schema schema.yaml
+          python -m poetry run arcaflow-docsgen -markdown README_TMP.md -schema schema.yaml
 
       - name: Determine diff
         run: |
