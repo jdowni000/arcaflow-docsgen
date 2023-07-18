@@ -44,7 +44,7 @@ jobs:
 
       - name: Generate schema yaml
         run: |      
-          python ./${{ inputs.plugin_path }} --schema > schema.yaml
+          python -m poetry run python ./${{ inputs.plugin_path }} --schema > schema.yaml
       
       - name: Create temp readme
         run: |
