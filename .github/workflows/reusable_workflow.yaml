@@ -19,13 +19,31 @@ jobs:
           wget https://github.com/arcalot/arcaflow-docsgen/releases/download/v0.1.0/arcaflow-docsgen_0.1.0_linux_amd64.tar.gz \
           && tar -C /usr/local/bin -xzf arcaflow-docsgen_0.1.0_linux_amd64.tar.gz
 
-      - name: Generate schema yaml
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9.16
+
+      - name: Install poetry
         run: |
-          python -m venv .venv
-          source .venv/bin/activate
-          pip install poetry
-          python -m poetry run pip install pyyaml==6.0.0 --force-reinstall
+          python -m pip install poetry==1.4.2
+
+      - name: Configure poetry
+        run: |
+          python -m poetry config virtualenvs.in-project true
+
+      - name: Cache the virtualenv
+        uses: actions/cache@v2
+        with:
+          path: ./.venv
+          key: ${{ runner.os }}-venv-${{ hashFiles('**/poetry.lock') }}
+
+      - name: Install dependencies
+        run: |
           python -m poetry install
+
+      - name: Generate schema yaml
+        run: |      
           python ./${{ inputs.plugin_path }} --schema > schema.yaml
       
       - name: Create temp readme
