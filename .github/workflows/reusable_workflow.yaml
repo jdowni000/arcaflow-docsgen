@@ -20,7 +20,7 @@ jobs:
           && tar -C /usr/local/bin -xzf arcaflow-docsgen_0.1.0_linux_amd64.tar.gz
 
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.9.16
 
